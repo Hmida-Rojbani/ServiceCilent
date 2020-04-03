@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.hateoas.Resources;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,7 +21,7 @@ public class ClientController {
 	private ClientService service;
 	
 	@GetMapping("/article")
-	public ResponseEntity<List<Article>> getAllProducts(){
+	public Resources<Article> getAllProducts(){
 		return service.findAllArticle();
 	}
 	
